@@ -1,4 +1,5 @@
 // phil welsby - 21 aug 2021 - example of Node.js Readline Module
+// when run parses the entire document and sends to STDOUT
 
 let readline = require('readline');
 let fs = require('fs');
