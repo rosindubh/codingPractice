@@ -1,6 +1,6 @@
 // phil welsby 21 aug - 2021
 
-//The os module provides operating system-related utility methods and properties. 
+//The os module provides operating system-related utility methods and properties.
 //It can be accessed using:
 
 const os = require('os');
