@@ -10,7 +10,7 @@ console.log(oddArray);
 let age = 18;
 let country = 'UK';
 if (age >= 18 && country == 'UK') {
-  console.log("Yes I can serve you");
+  console.log("\nYes I can serve you\n");
 } else {
   console.log("You're not old enough");
 }
@@ -29,3 +29,15 @@ for (let i = 0; i < toppings.length; i++) {
       case 'anchovies': console.log(`${toppings[i]} is well out of order`);
     }
 }
+
+
+// this is an object
+const person = {
+  fName: 'Phil',
+  lName: 'Welsby',
+  sayHi () {
+    return `\nHi my name is ${person.fName} ${person.lName}`; // Expected ouput - [Hi my name is Phil Welsby]
+  }
+};
+
+console.log(person.sayHi());
