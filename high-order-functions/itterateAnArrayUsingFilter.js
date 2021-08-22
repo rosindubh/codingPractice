@@ -1,7 +1,7 @@
 // phil welsby - 21 aug 2021 - using fiter() a high order function
 
 
-// create a array
+// create an array
 const numbers = [1, 2, 3, 4, 5];
 
 // function to itterate through an array and add 1 to the value
