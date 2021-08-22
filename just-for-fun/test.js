@@ -41,3 +41,19 @@ const person = {
 };
 
 console.log(person.sayHi());
+
+// functions
+
+let coffeeIsGrinding = false;
+
+const pressGrindBeans =  () => {
+  if (coffeeIsGrinding) {
+    console.log("\nStopping the grind");
+    coffeeIsGinding = false;
+  } else {
+      console.log("\nGrinding is about to begin");
+      coffeeIsGrinding = true;
+  }
+}
+
+pressGrindBeans(); //Expect output [Grinding is about to begin]
