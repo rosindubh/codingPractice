@@ -5,7 +5,7 @@ let readline = require('readline');
 let fs = require('fs');
 
 let myInterface = readline.createInterface({
-  input: fs.createReadStream('index.html')
+  input: fs.createReadStream('sketch.txt')
 });
 
 let lineno = 0;
