@@ -1,0 +1,40 @@
+# phil welsby - 29 july 2021
+
+# three ways to construct a function
+const myFunction = (num1, num2) => {
+const myFunction = function(num1, num2) {
+function myFunction(num1, num2) {
+
+# object
+const objectName = {}
+
+# method inside an object
+const functionName {
+  firstMethod: {},
+  nextMethod: {},
+  nextMethod: {}
+}
+
+# example of object with methods
+const pet = {
+  name: 'Toby',
+  typeOfPet: 'Dog',
+  age: 7,
+  colour: 'Blue',
+
+  eat: function () {
+    console.log(this.name + ' is eating');
+  },
+  drink: function () {
+    console.log(this.name + ' is drinking');
+  }
+
+}
+
+pet.eat()
+pet.drink();
+
+
+
+# array
+
