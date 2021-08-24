@@ -1,7 +1,9 @@
 # phil welsby - CodeNation Master27 Course Notes
 
 Monday 23 August 2021
-Morning 
+Morning session
+---------------
+
 Testing using jest:
 To set up the environment:
 1) create a folder with no spaces.
@@ -11,7 +13,7 @@ To set up the environment:
 5) edit line 7 of the package.json file to read ["test": "jest"]
 
 First we create the [app.test.js] file adding [let app = require("./app");]
-so we can aquire the app.js files contents.
+so we can acquire the app.js files contents.
 To run the test we enter: [npm test]
 The test will at this stage fail. Next create a function or whatever that we are 
 testing for in the app.js file, and export the contents as follows:
@@ -23,8 +25,57 @@ module.exports = {
   noOfFunctions: 3
 }
 
-If these 3 functions existed in the [app.js] file they would be accessable to the [app.test.js] file.
+If these 3 functions existed in the [app.js] file they would be accessible to the [app.test.js] file.
 
 We only covered Test Driven Development (TDD) today. Other type of testing are:
-Intergration Testing
+Integration Testing
 Functional Testing
+
+Tuesday 24 August 2021
+Morning
+React.js
+
+NOTE: props and components are very important
+
+Three major players:    React.js    Vue     Angular
+
+JSX-HTML converts to standard JavaScript
+
+A component can be either a function or a class.
+
+Functional Components
+App is the root component
+
+There is a virtual DOM and an actual DOM. React updates the actual DOM if the virtual DOM changes.
+
+Standard practice is to name function components starting with a capital letter.
+
+There can only be one parent element, most commonly a <div> tag
+
+React.createElement(      this is JavaScript
+Component<                this is JSX
+
+The name of the compiler is Babel
+
+To start a new project enter the following into the terminal. Making sure you are in the right directory.
+
+npx createreact-app [name of the app goes here]
+
+Afternoon session
+-----------------
+
+You cannot use the word class in React, class is a keyword inside React. Use className instead.
+
+State & Methods
+----------------
+
+useState hook (research this)
+
+NOTE: hooks do not work inside classes
+
+You can only pass props down the tree not up it.
+
+Check out Netninja for React and read the React Documentation
+
+
+
