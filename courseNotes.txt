@@ -59,7 +59,7 @@ The name of the compiler is Babel
 
 To start a new project enter the following into the terminal. Making sure you are in the right directory.
 
-npx createreact-app [name of the app goes here]
+npx create-react-app [name of the app goes here]
 
 Afternoon session
 -----------------
