@@ -9,7 +9,20 @@ const theObject = {
   drums: "John Heny Bonham"
 }
 
+class person {
+  constructor(name) {
+  this._name = name;
+  }
+  get name() {
+  return this._name;
+  }
+}
+
+let phil = new person("Phil");
+
 module.exports = {
   add,
-  theObject
+  theObject,
+  person,
+  phil
 }
