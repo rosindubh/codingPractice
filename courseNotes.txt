@@ -14,6 +14,13 @@ To set up the environment:
 
 First we create the [app.test.js] file adding [let app = require("./app");]
 so we can acquire the app.js files contents.
+
+a test may look something like this:
+test('should equal 5 when passed 2 and 3', () => {
+  expect(app.add(2, 3)).toBe(5)
+});
+
+
 To run the test we enter: [npm test]
 The test will at this stage fail. Next create a function or whatever that we are 
 testing for in the app.js file, and export the contents as follows:
@@ -77,5 +84,18 @@ You can only pass props down the tree not up it.
 
 Check out Netninja for React and read the React Documentation
 
+Example of using useState:
+const [count, setCount] = useState(0)
 
+The useState function returns a pair of values which we restructure with []
+The first is a value, the second is a function to update the first
+
+Think of the state as a kind of storee, which holds the current state
+of the application.
+
+When the app loads, it will be rendered with the initial state (that you coded in)
+but as uses interact with your app, there state can change
+
+As well as having a state property inside our component, we can also have different
+methods (functions) which can do different things to our user interface
 
