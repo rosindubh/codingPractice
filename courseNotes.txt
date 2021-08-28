@@ -2,7 +2,7 @@
 
 Monday 23 August 2021
 Morning session
----------------
+---------------------
 
 Testing using jest:
 To set up the environment:
