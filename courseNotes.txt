@@ -99,3 +99,7 @@ but as uses interact with your app, there state can change
 As well as having a state property inside our component, we can also have different
 methods (functions) which can do different things to our user interface
 
+-------------------------------------------------------------------------------------------------
+API's and fetching DATA
+
+Installed Insomnia link https://insomnia.rest/
