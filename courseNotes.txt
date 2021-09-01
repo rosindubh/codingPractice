@@ -100,6 +100,29 @@ As well as having a state property inside our component, we can also have differ
 methods (functions) which can do different things to our user interface
 
 -------------------------------------------------------------------------------------------------
+Tuesday 31 August
+
+my GitHub link to this subject is here: https://github.com/rosindubh/fetch-app
+
 API's and fetching DATA
 
 Installed Insomnia link https://insomnia.rest/
+
+An API is a software interface between computers and programs or programs with other programs.
+The <fetch> module is used to get data
+
+React life-cycle link: https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+componentDidMount Method
+------------------------
+This is no loger as popular due to the arrival of hooks and the use of functionale components
+This method called handelFetch
+
+
+componentDidUpdate Method
+------------------------
+This was used as confirmation that the component mounted and feed to console 
+
+componentWillUnmount Method
+---------------------------
+This is like a clean-up say ifyou were to click off the page
