@@ -126,3 +126,28 @@ This was used as confirmation that the component mounted and feed to console
 componentWillUnmount Method
 ---------------------------
 This is like a clean-up say ifyou were to click off the page
+
+Throw and Try to Catch
+----------------------
+This is error handling. 
+The try statement lets you test a block of code for errors.
+The catch statement lets you handle the error.
+The throw statement lets you create custom errors.
+The finally statement lets you execute code, after try and catch, regardless of the result.
+
+JavaScript try and catch
+
+The try statement allows you to define a block of code to be tested for errors while it is being executed.
+
+The catch statement allows you to define a block of code to be executed, if an error occurs in the try block.
+
+The JavaScript statements try and catch come in pairs:
+
+try {
+  Block of code to try
+}
+catch(err) {
+  Block of code to handle errors
+} 
+
+
