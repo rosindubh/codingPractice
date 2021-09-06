@@ -231,3 +231,32 @@ function About() {
 function Users() {
   return <h2>Users</h2>;
 }
+
+
+---------------------------------------------------------------------------------------------------------------
+NodeJs (server side)
+Node is a runtime environment which allows you to run javascript outside of the browser
+
+creating a simple CLI
+
+1) create the root folder
+2) run npm init and accept or edit the requests
+3) create a src folder
+4) create app.js in the src folder
+5) create utils folder
+6) create index.js in the utils folder
+7) cd back to root folder and run npm -y init
+8) tree should look as follows:
+.
+├── package.json
+└── src
+    ├── app.js
+    └── utils
+        └── index.js
+
+2 directories, 3 files
+
+------------------------------------------------
+
+The app.js file contains the progress.argv variables
+The index.js file contains the function
