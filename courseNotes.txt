@@ -285,11 +285,24 @@ Importing a file is a little different to React
 The syntax to import the function myFunction which is written in the index.js file in the utils folder would be as follows:
 const { myFunction } = require('./utils')
 Here we would be in the src folder and are tree would look as follows:
-4.
+.
 ├── app.js
 └── utils
     └── index.js
 Note by calling the file in the utils folder index.js we don't have to include it in the path
 
---------------------------------------------------------------------------------------------
 We use modularity to separate our concers, this makes debubbing easier as the code is not on huge file
+
+---------------------------------------------------------------------------------------------------
+Databases
+---------
+There are 2 main types of database
+Document based database - Mongo
+Relational databases - sql azure
+
+With a local install of a database the database exists on the local machine
+and in not accessible unless it is shared.
+Can use Docker as a way of doing this.
+
+Mongo Atlas is a hosting provider
+
