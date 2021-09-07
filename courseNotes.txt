@@ -283,7 +283,7 @@ Importing a file is a little different to React
 The syntax to import the function myFunction which is written in the index.js file in the utils folder would be as follows:
 const { myFunction } = require('./utils')
 Here we would be in the src folder and are tree would look as follows:
-.
+4.
 ├── app.js
 └── utils
     └── index.js
