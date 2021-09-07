@@ -261,6 +261,8 @@ creating a simple CLI
 The app.js file contains the progress.argv variables
 The index.js file contains the function
 
+MODULARITY
+---------
 Exporting the contents of a file
 ----------------------------------
 
@@ -289,3 +291,5 @@ Here we would be in the src folder and are tree would look as follows:
     └── index.js
 Note by calling the file in the utils folder index.js we don't have to include it in the path
 
+--------------------------------------------------------------------------------------------
+We use modularity to separate our concers, this makes debubbing easier as the code is not on huge file
