@@ -260,3 +260,19 @@ creating a simple CLI
 
 The app.js file contains the progress.argv variables
 The index.js file contains the function
+
+Exporting the contents of a file
+----------------------------------
+
+I node we can't use export defaut like we do in React
+Instead there are 2 ways we can do it
+
+1) [module.exports = [funcrion name] at the bottom of the file
+This is ok if we are only exporting the one function
+
+2) Another way is using the following syntax:
+
+exports.myFunction = (para1, para2) => {
+  //block of code here
+}
+
