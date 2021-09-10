@@ -299,7 +299,7 @@ Here we would be in the src folder and our tree would look as follows:
     └── index.js
 Note by calling the file in the utils folder index.js we don't have to include it in the path
 
-We use modularity to separate our concers, this makes debubbing easier as the code is not on huge file
+We use modularity to separate our concers, this makes debubbing easier as the code is not one huge file
 
 ---------------------------------------------------------------------------------------------------
 Databases
@@ -314,8 +314,10 @@ Can use Docker as a way of doing this.
 
 Mongo Atlas is a hosting provider
 
+
 SETTING UP A MONGO DATABASE CONNECTION
-------------------------------------
+---------------------------------------
+---------------------------------------
 Setting up the basic file structure, from the root directory of the project looks like this:
 
 .
@@ -330,7 +332,7 @@ Setting up the basic file structure, from the root directory of the project look
 
 
 Next add a .gitignore and .env file in the root of the folder project, 
-and add .env and /node_modules tot he .gitignore file.
+and add .env and /node_modules to the .gitignore file.
 
 With all that done run: <npm init -y> and <npm i dotenv>
 NOTE: The dotenv package allows access to the .env file in the root directory of the project
@@ -353,11 +355,11 @@ require("dotenv").config(); //this allows you to access a .env file in your proj
 //declare a Mongo client (declaring this app can connect to my Mongo database)
 const client = new MongoClient() 
 
-NOTE:THE MongoClient FUNCTION TAKES TO ARGUMENTS, THE URI AND OPTIONS
+NOTE:THE MongoClient FUNCTION TAKES TWO ARGUMENTS, THE URI AND OPTIONS
 DO NOT PASTE THE URI HERE BECAUSE IT WILL BE VISIBLE TO ANYONE.
 
 Next paste the connection URI into the .env file giving it the variable name URI_MONGO
-Then add [process.env.MONGO_URI] as the argument in MongoClient onside the connection.js file
+Then add [process.env.MONGO_URI] as the argument in MongoClient inside the connection.js file
 
 Now create an asycronous function in the connection.js file using <async>
 THIS IS BECAUSE THE TIMELINE IS NOW OUTSIDE OF THE APPLICATION AND THE CODE NEEDS TO WAIT
