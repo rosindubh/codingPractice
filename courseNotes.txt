@@ -2,7 +2,7 @@
 
 Setting up a ssh key on GitHub
 ------------------------------
-1) go to this link: git@github.com:rosindubh/bands-mongo.git
+1) go to this link: https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
    and follow instruction for Generating a new key
 2) now go to this link and follow instructions:
    https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
@@ -274,7 +274,7 @@ MODULARITY
 Exporting the contents of a file
 ----------------------------------
 
-I node we can't use export defaut like we do in React
+In node we can't use export defaut like we do in React
 Instead there are 2 ways we can do it
 
 1) [module.exports = [funcrion name] at the bottom of the file
@@ -292,7 +292,7 @@ Importing a files contents
 Importing a file is a little different to React
 The syntax to import the function myFunction which is written in the index.js file in the utils folder would be as follows:
 const { myFunction } = require('./utils')
-Here we would be in the src folder and are tree would look as follows:
+Here we would be in the src folder and our tree would look as follows:
 .
 ├── app.js
 └── utils
