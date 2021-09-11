@@ -10,8 +10,6 @@ Next install Mongoose from the command line using npm:
 
 $ npm install mongoose --save
 
-NOTES REQUIRED HERE!!!!!!!!!
-WATCH ANDY'S VIDEO AGAIN ON SETTING UP MONGOOSE!!!!!!
 
 ____________________________
 CREATING A MONGOOSE DATABASE
@@ -55,7 +53,6 @@ connection();
 
 YOU CAN NOW RUN THE connection.js FILE IN THE TERMINAL AND IT SHOULD CONNECT AND HANG THERE CONNECTED
 
-paused here at 37:00 video date is Thursday, September 9, 2021
 
 Next we go to app.js file and the first thing we do is require connection.js because we want it to run
 when we start app.js. We do this with this line of code: 
@@ -81,8 +78,10 @@ const command = process.argv[2];
 You can also use yargs in place of process.argv
 LINK: https://yargs.js.org/
 
-CODE SHOULD NOW LOOK LIKE THIS:
--------------------------------
+
+*********************************
+*CODE SHOULD NOW LOOK LIKE THIS:*
+*********************************
 
 require('./db/connection');
 const mongoose = require('mongoose');
@@ -106,8 +105,9 @@ ________________________________________________________
 *HERE WE HAVE PASSED AN OBJECT DIRECTLY INTO THE FUNCTION *
 ---------------------------------------------------------
 
-CODE SHOULD NOW LOOK LIKE THIS:
---------------------------------
+*********************************
+*CODE SHOULD NOW LOOK LIKE THIS:*
+*********************************
 
 require('./db/connection');
 const mongoose = require('mongoose');
@@ -125,4 +125,115 @@ const app = async = () => {
  mongoose.disconnect;
 };
 
+app();
+
+
+NEXT WE NEED TO WRITE THE MODEL AND THE METHOD
+
+Now we go to the model.js file
+Here we are going to build a schema and convert it to a model.
+A schema is structure that your database needs
+
+First thing we do is import mongoose like we did in the last 2 files
+const mongoose = require('mongoose');
+
+Then we build the schema, NOTE: mongoose.schema() take an object as a parameter
+
+const filmSchema = mongoose.Schema({
+    name: {
+      type: String,
+      require: true,
+      unique: true,
+   },
+})
+
+HERE WE HAVE DETERMINED THAT name WILL BE OF TYPE STRING, IT WILL REQUIRE A NAME AND ONLY ONE INSTANCE 
+OF THAT NAME CAN BE ADDED TO THE DATABASE
+
+WE THEN DEFINE THE OTHER key, value pairs that we want in our database
+
+const filmSchema = mongoose.Schema({
+    name: { 
+      type: String,
+      required: true,
+      unique: true,
+   },
+   actor: {
+      type: String
+   },
+   like: {
+      type: String,
+      required: true
+   }
+});
+
+const Film = mongoose.model("Film", filmSchema);
+
+module.exports = Film;
+
+
+
+************************************************
+*SO COMPLETE film.model.js NOW LOOKS LIKE THIS:*
+************************************************
+
+const mongoose = require('mongoose');
+
+const filmSchema = mongoose.Schema({
+    name: {
+      type: String,
+      required: true,
+      unique: true,
+   },
+   actor: { 
+      type: String ,
+   },
+   like: { 
+      type: String,
+      required: true
+   },
+});
+
+const Film = mongoose.model("Film", filmSchema);
+
+module.exports = Film;
+
+
+
+Finally we go to the film.methods.js file and build the methods that will be required
+
+First line of code is to require the model with this line of code:
+const Film = require('./film.model');
+
+NOTE: the file film.model.js resides in the same folder as film.methods.js
+
+We then export our addMove function we decalred in app.js earlier as follows:
+
+exports.addMovie = async (newFilm) => {
+    try {
+        const movie = new Film(newFilm);
+        await movie.save()
+    } catch (error) {
+      console.log(error);
+  }
+};
+
+
+****************************
+*CODE SHOULD LOOK LIKE THIS*
+****************************
+
+const Film = require('./film.model');
+
+exports.addMovie = async (newFilm) => { 
+    try {
+        const movie = new Film(newFilm);
+        await movie.save()
+    } catch (error) {
+      console.log(error);
+  }
+};
+
+
+VIDEO PAUSED AT 1:04:00 DATE OF VIDEO Thursday, September 9, 2021
 
