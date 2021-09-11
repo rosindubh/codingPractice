@@ -1,5 +1,7 @@
 //phil welsby - 11 sept 2021
 
+LINK: https://jestjs.io/
+
 Testing using jest:
 To set up the environment:
 1) create a folder with no spaces.

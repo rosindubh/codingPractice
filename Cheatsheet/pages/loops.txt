@@ -1,2 +1,50 @@
 //phil welsby - 11 sept 2021
-this is the page about loops
+
+LINK: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
+
+for (let step = 0; step < 5; step++) {
+  // Runs 5 times, with values of step 0 through 4.
+  console.log('Walking east one step');
+}
+
+
+for ([initialExpression]; [conditionExpression]; [incrementExpression])
+  statement
+
+
+do...while statement
+--------------------
+do
+  statement
+while (condition);
+
+
+Example 1:
+let i = 0;
+do {
+  i += 1;
+  console.log(i);
+} while (i < 5);
+
+
+while statement
+---------------
+while (condition)
+  statement
+
+
+Example 1:
+let n = 0;
+let x = 0;
+while (n < 3) {
+  n++;
+  x += n;
+}
+
+
+Example 2:
+// Infinite loops are bad!
+while (true) {
+  console.log('Hello, world!');
+}
+

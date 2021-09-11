@@ -1,2 +1,44 @@
 //phil welsby - 11 sept 2021
-This is the page about Objects
+
+LINK: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+LINK: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Object
+
+CREATING A NEW OBJECT:
+let o = new Object()
+o.foo = 42
+
+console.log(o)
+// Object { foo: 42 }
+
+
+
+//Activity 1:
+const person = {
+  name: 'Phil',
+  age: 61,
+  sayHi: function () {
+    return `Hello my name is ${this.name}`;
+  }
+}
+
+console.log(person.sayHi());
+
+//Activity 2:
+const pet = {
+  name: 'Timmy',
+  typeOfPet: 'Tortoise',
+  age: 2,
+  colour: 'Green/Brown',
+
+  eat: function () {
+    return `${this.name} is eating`;
+  },
+  drink: function () {
+    return `${this.name} is drinking`;
+  }
+
+}
+console.log(pet.eat());
+console.log(pet.drink());
+
+
