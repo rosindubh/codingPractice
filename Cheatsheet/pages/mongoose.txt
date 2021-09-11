@@ -80,6 +80,7 @@ LINK: https://yargs.js.org/
 
 
 *********************************
+*connection.js                  * 
 *CODE SHOULD NOW LOOK LIKE THIS:*
 *********************************
 
@@ -106,6 +107,7 @@ ________________________________________________________
 ---------------------------------------------------------
 
 *********************************
+*app.js                         *
 *CODE SHOULD NOW LOOK LIKE THIS:*
 *********************************
 
@@ -152,30 +154,10 @@ OF THAT NAME CAN BE ADDED TO THE DATABASE
 
 WE THEN DEFINE THE OTHER key, value pairs that we want in our database
 
-const filmSchema = mongoose.Schema({
-    name: { 
-      type: String,
-      required: true,
-      unique: true,
-   },
-   actor: {
-      type: String
-   },
-   like: {
-      type: String,
-      required: true
-   }
-});
-
-const Film = mongoose.model("Film", filmSchema);
-
-module.exports = Film;
-
-
-
-************************************************
-*SO COMPLETE film.model.js NOW LOOKS LIKE THIS:*
-************************************************
+************************
+*film.model.js         * 
+*SHOULD LOOK LIKE THIS:*
+************************
 
 const mongoose = require('mongoose');
 
@@ -220,6 +202,7 @@ exports.addMovie = async (newFilm) => {
 
 
 ****************************
+*film.methods.js           *
 *CODE SHOULD LOOK LIKE THIS*
 ****************************
 
@@ -234,6 +217,6 @@ exports.addMovie = async (newFilm) => {
   }
 };
 
-
+YOU SHOULD NOW BE ABLE TO TEST IF THIS ADDS DATA TO YOUR DATABASE
 VIDEO PAUSED AT 1:04:00 DATE OF VIDEO Thursday, September 9, 2021
 
