@@ -6,7 +6,36 @@ Setting up a ssh key on GitHub
    and follow instruction for Generating a new key
 2) now go to this link and follow instructions:
    https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
-3)
+
+
+Thursday, July 29, 2021
+
+Functions
+---------
+Three ways of writing a function:
+
+(1)
+DECLARATION:
+function myFunction () {
+  //block of cod goes here//
+}
+myFunction();
+
+(2)
+EXPRESSION/ANONYMOUS FUNCTION:
+const myFunction = function() {
+  //block of code goes here//
+}
+myFunction();
+
+(3)
+ARROW FUNCTION SYNTAX:
+const myFunction = () => {
+  //block of code here//
+}
+myFunction();
+
+
 
 Monday 23 August 2021
 Morning session
@@ -45,6 +74,7 @@ If these 3 functions existed in the [app.js] file they would be accessible to th
 We only covered Test Driven Development (TDD) today. Other type of testing are:
 Integration Testing
 Functional Testing
+
 
 Tuesday 24 August 2021
 Morning
@@ -107,7 +137,8 @@ but as uses interact with your app, there state can change
 As well as having a state property inside our component, we can also have different
 methods (functions) which can do different things to our user interface
 
--------------------------------------------------------------------------------------------------
+
+
 Tuesday 31 August
 
 my GitHub link to this subject is here: https://github.com/rosindubh/fetch-app
@@ -241,8 +272,10 @@ function Users() {
 }
 
 
----------------------------------------------------------------------------------------------------------------
+6 September 2021
+
 NodeJs (server side)
+--------------------
 Node is a runtime environment which allows you to run javascript outside of the browser
 
 creating a simple CLI
@@ -277,7 +310,7 @@ Exporting the contents of a file
 In node we can't use export defaut like we do in React
 Instead there are 2 ways we can do it
 
-1) [module.exports = [funcrion name] at the bottom of the file
+1) [module.exports = [function name] at the bottom of the file
 This is ok if we are only exporting the one function
 
 2) Another way is using the following syntax:
