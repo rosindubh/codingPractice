@@ -1,0 +1,61 @@
+//phil welsby - 11 sept 2021
+
+NodeJs (server side)
+--------------------
+Node is a runtime environment which allows you to run javascript outside of the browser
+
+creating a simple CLI
+
+1) create the root folder
+2) run npm init and accept or edit the requests
+3) create a src folder
+4) create app.js in the src folder
+5) create utils folder
+6) create index.js in the utils folder
+7) cd back to root folder and run npm -y init
+8) tree should look as follows:
+.
+├── package.json
+└── src
+    ├── app.js
+    └── utils
+        └── index.js
+
+2 directories, 3 files
+
+------------------------------------------------
+
+The app.js file contains the progress.argv variables
+The index.js file contains the function
+
+MODULARITY
+---------
+Exporting the contents of a file
+----------------------------------
+
+In node we can't use export defaut like we do in React
+Instead there are 2 ways we can do it
+
+1) [module.exports = [function name] at the bottom of the file
+This is ok if we are only exporting the one function
+
+2) Another way is using the following syntax:
+
+exports.myFunction = (para1, para2) => {
+  //block of code here
+}
+
+Importing a files contents
+--------------------------
+
+Importing a file is a little different to React
+The syntax to import the function myFunction which is written in the index.js file in the utils folder would be as follows:
+const { myFunction } = require('./utils')
+Here we would be in the src folder and our tree would look as follows:
+.
+├── app.js
+└── utils
+    └── index.js
+Note by calling the file in the utils folder index.js we don't have to include it in the path
+
+We use modularity to separate our concers, this makes debubbing easier as the code is not one huge file

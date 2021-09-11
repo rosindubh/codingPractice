@@ -1,0 +1,84 @@
+//phil welsby - 11 sept 2021
+
+Databases
+---------
+There are 2 main types of database
+Document based database - Mongo
+Relational databases - sql azure
+
+With a local install of a database the database exists on the local machine
+and in not accessible unless it is shared.
+Can use Docker as a way of doing this.
+
+Mongo Atlas is a hosting provider
+
+
+SETTING UP A MONGO DATABASE CONNECTION
+---------------------------------------
+---------------------------------------
+Setting up the basic file structure, from the root directory of the project looks like this:
+
+.
+├── LICENSE
+├── README.md
+└── src
+    ├── app.js
+    ├── db
+    │   └── connection.js
+    └── utils
+        └── index.js
+
+
+Next add a .gitignore and .env file in the root of the folder project, 
+and add .env and /node_modules to the .gitignore file.
+
+With all that done run: <npm init -y> and <npm i dotenv>
+NOTE: The dotenv package allows access to the .env file in the root directory of the project
+
+To interact with MongoDB you need to install MongoDB's library with the following command:
+npm i mongodb
+NOTE: if an npm package ask to be installed globally DO NOT DO IT!!!
+
+Writing the code
+----------------
+The connection.js file connects to the database and in our example was where all our interactions with
+the database  were held. MongoDB is not the best and all connections have to be inside a function
+we declare in the connection.js file.
+
+So starting with the connection.js file add the following:
+
+const {MongoClient} = require("mongodb");
+require("dotenv").config(); //this allows you to access a .env file in your project
+
+//declare a Mongo client (declaring this app can connect to my Mongo database)
+const client = new MongoClient() 
+
+NOTE:THE MongoClient FUNCTION TAKES TWO ARGUMENTS, THE URI AND OPTIONS
+DO NOT PASTE THE URI HERE BECAUSE IT WILL BE VISIBLE TO ANYONE.
+
+Next paste the connection URI into the .env file giving it the variable name URI_MONGO
+Then add [process.env.MONGO_URI] as the argument in MongoClient inside the connection.js file
+
+Now create an asycronous function in the connection.js file using <async>
+THIS IS BECAUSE THE TIMELINE IS NOW OUTSIDE OF THE APPLICATION AND THE CODE NEEDS TO WAIT
+UNTIL THE TIMELINE RETURNS TO THE APPLICATION WHEN THE REQUEST HAS COMPLETED
+
+Code will look like this:
+
+const {MongoClient} = require("mongodb");
+require("dotenv").config(); //this allows you to access a .env file in your project
+
+//declare a Mongo client (declaring this app can connect to my Mongo database)
+const client = new MongoClient(process.env.MONGO_URI)
+
+const connection = async (crudFunc, dataObj) => {
+  await client.connect();
+  const db = client.db("bands");
+  const collection = db.collection("band");
+  collection.insertOne({name: "Eagles"})
+//  await crudFunc(collection, dataObj
+//  client.close();
+}
+
+//module.exports = connection;
+connection();

@@ -21,22 +21,30 @@ const app = () => {
      page = './pages/classes.txt'
      displayPage(page)
    }
+   else if(command === 'databases') {
+     page = './pages/databases.txt'
+     displayPage(page)
+   }
    else if(command === 'flexbox') {
     page = './pages/flexbox.txt'
     displayPage(page)
-  } 
+  }
   else if(command === 'functions') {
     page = './pages/functions.txt'
     displayPage(page)
-  }   
+  }
   else if(command === 'jest') {
     page = './pages/jest.txt'
     displayPage(page)
-  }   
+  }
   else if(command === 'loops') {
     page = './pages/loops.txt'
     displayPage(page)
-  }   
+  }
+  else if(command === 'node') {
+    page = './pages/node.txt'
+    displayPage(page)
+  }
   else if(command === 'object') {
     page = './pages/object.txt'
     displayPage(page)
@@ -47,7 +55,7 @@ const app = () => {
 }
   else {
     console.clear();
-    console.log(`${command} is not listed...\n\nchoices are: \napi\narrays\nclasses\nflexbox\nfunctions\njest\nloops\nobject\nreact`)
+    console.log(`${command} is not listed...\n\nchoices are: \napi\narrays\nclasses\ndatabases\nflexbox\nfunctions\njest\nloops\nnode\nobject\nreact`)
   }
 
 }
