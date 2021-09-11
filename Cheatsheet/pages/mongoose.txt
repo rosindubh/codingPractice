@@ -12,3 +12,22 @@ $ npm install mongoose --save
 
 NOTES REQUIRED HERE!!!!!!!!!
 WATCH ANDY'S VIDEO AGAIN ON SETTING UP MONGOOSE!!!!!!
+
+CREATING A MONGOOSE DATABASE
+----------------------------
+
+Create a GitHub repository using the name of your project and clone it.
+
+Before you do anything run npm init -y
+
+Then make a .gitignore to include /node_modules and .env
+Then make a .env file which contains the MONGO_URI = <connection URI goes here>
+Remember to edit the URI to contain the correct username and password. Add a different cluster name if different.
+
+Next make a src folder
+Inside the src folder create a file called app.js
+Then inside the src folder create a db folder and a films folder.
+Next inside db folder create a file called connection.js
+Next inside the films folder create 2 files. One called film.methods.js and one called film.model.js
+NOTE THE NAMES film.methods and film.model CAN BE WHATEVER SUITS YOUR PARTICULAR PROJECT.
+
