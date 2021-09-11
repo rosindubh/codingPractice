@@ -55,6 +55,29 @@ connection();
 
 YOU CAN NOW RUN THE connection.js FILE IN THE TERMINAL AND IT SHOULD CONNECT AND HANG THERE CONNECTED
 
-paused here at 37:00 vidfeo date is Thursday, September 9, 2021
+paused here at 37:00 video date is Thursday, September 9, 2021
+
+Next we go to app.js file and the first thing we do is require connection.js because we want it to run
+when we start app.js. We do this with this line of code: 
+require('./db/connection');
+
+This means db/connection is going to run on line 1 of app.js ands the connection is going to stay open until told to close.
+
+Now we require access to mongoose if we want to disconnect with this line of code: 
+const mongoose = require('mongoose');
+
+Next we have already planned the functions we are going to build. So we start by adding the first one to app.js even though
+we haven't made it yet. This is done with the following line of code:
+const {addMovie} = require('./films/film.methods');
+NOTE: addMovive is the function in this case, it will be different in your project.
+NOTE: ./films/film.methods is the path to the file called film.methods.js
+The next time app.js is run addMove must have something in it, even if it's only a consoile.log
+
+The last thing we need to add is the command variable to catch argv[2] in the terminal, 
+and assign it to variable named command.
+This is done with the following line of code:
+const command = process.argv[2];
+You can also use yargs in place of process.argv
+
 
 
