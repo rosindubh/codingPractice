@@ -59,7 +59,7 @@ const app = () => {
 }
   else {
     console.clear();
-    console.log(`${command} is not listed...\n\nchoices are: \napi\narrays\nclasses\nflexbox\nfunctions\njest\nloops\nmongo\nnmongoose\nnode\nobject\nreact`)
+    console.log(`${command} is not listed...\n\nchoices are: \napi\narrays\nclasses\nflexbox\nfunctions\njest\nloops\nmongo\nmongoose\nnode\nobject\nreact\n`)
   }
 
 }
