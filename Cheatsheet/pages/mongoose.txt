@@ -77,7 +77,52 @@ The last thing we need to add is the command variable to catch argv[2] in the te
 and assign it to variable named command.
 This is done with the following line of code:
 const command = process.argv[2];
-You can also use yargs in place of process.argv
 
+You can also use yargs in place of process.argv
+LINK: https://yargs.js.org/
+
+CODE SHOULD NOW LOOK LIKE THIS:
+-------------------------------
+
+require('./db/connection');
+const mongoose = require('mongoose');
+const {addMovie} = require('./films/film.methods');
+const command = process.argv[2];
+
+WE now start to build our app function:
+
+const app = async = () => {
+  if (command === 'add' {
+    await addMovie({
+      name: process.argv[3],
+      actor: process.argv[4],
+      like: process.argv[5],
+  })
+ }
+ mongoose.disconnect;
+};
+
+________________________________________________________
+*HERE WE HAVE PASSED AN OBJECT DIRECTLY INTO THE FUNCTION *
+---------------------------------------------------------
+
+CODE SHOULD NOW LOOK LIKE THIS:
+--------------------------------
+
+require('./db/connection');
+const mongoose = require('mongoose');
+const {addMovie} = require('./films/film.methods');
+const command = process.argv[2];
+
+const app = async = () => { 
+  if (command === 'add' { 
+    await addMovie({
+      name: process.argv[3],
+      actor: process.argv[4],
+      like: process.argv[5],
+  })
+ }
+ mongoose.disconnect;
+};
 
 
