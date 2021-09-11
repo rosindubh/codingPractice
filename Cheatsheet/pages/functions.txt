@@ -1,0 +1,25 @@
+//phil welsby - 11 sept 2021
+
+Three ways of writing a function:
+
+(1)
+DECLARATION:
+function myFunction () {
+  //block of cod goes here//
+}
+myFunction();
+
+(2)
+EXPRESSION/ANONYMOUS FUNCTION:
+const myFunction = function() {
+  //block of code goes here//
+}
+myFunction();
+
+(3)
+ARROW FUNCTION SYNTAX:
+const myFunction = () => {
+  //block of code here//
+}
+myFunction();
+

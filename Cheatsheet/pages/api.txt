@@ -1,0 +1,131 @@
+//phil welsby - 11 sept 2021
+
+my GitHub link to this subject is here: https://github.com/rosindubh/fetch-app
+
+API's and fetching DATA
+
+Installed Insomnia link https://insomnia.rest/
+
+An API is a software interface between computers and programs or programs with other programs.
+The <fetch> module is used to get data
+
+React life-cycle link: https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+componentDidMount Method
+------------------------
+This is no loger as popular due to the arrival of hooks and the use of functionale components
+This method called handelFetch
+
+
+componentDidUpdate Method
+------------------------
+This was used as confirmation that the component mounted and feed to console 
+
+componentWillUnmount Method
+---------------------------
+This is like a clean-up say ifyou were to click off the page
+
+Throw and Try to Catch
+----------------------
+This is error handling. 
+The try statement lets you test a block of code for errors.
+The catch statement lets you handle the error.
+The throw statement lets you create custom errors.
+The finally statement lets you execute code, after try and catch, regardless of the result.
+
+JavaScript try and catch
+
+The try statement allows you to define a block of code to be tested for errors while it is being executed.
+
+The catch statement allows you to define a block of code to be executed, if an error occurs in the try block.
+
+The JavaScript statements try and catch come in pairs:
+
+try {
+  Block of code to try
+}
+catch(err) {
+  Block of code to handle errors
+} 
+
+
+The throw Statement
+
+The throw statement allows you to create a custom error.
+
+Technically you can throw an exception (throw an error).
+
+The exception can be a JavaScript String, a Number, a Boolean or an Object:
+
+
+The finally Statement
+---------------------
+The finally statement lets you execute code, after try and catch, regardless of the result:
+
+
+React Router link to docs: https://reactrouter.com/web/guides/quick-start
+------------
+For development use: npm install react-router-dom
+Install in the project folder
+
+1st Example: Basic Routing
+In this example we have 3 “pages” handled by the router: a home page, an about page, and a users page. 
+As you click around on the different <Link>s, the router renders the matching <Route>.Note: Behind the 
+scenes a <Link> renders an <a> with a real href, so people using the keyboard for navigation or screen 
+readers will still be able to use this app.
+
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+export default function App() {
+  return (
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/users">
+            <Users />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+function Home() {
+  return <h2>Home</h2>;
+}
+
+function About() {
+  return <h2>About</h2>;
+}
+
+function Users() {
+  return <h2>Users</h2>;
+}

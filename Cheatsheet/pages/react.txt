@@ -1,0 +1,60 @@
+//phil welsby - 11 sept 2021
+
+React.js
+
+NOTE: props and components are very important
+
+Three major players:    React.js    Vue     Angular
+
+JSX-HTML converts to standard JavaScript
+
+A component can be either a function or a class.
+
+Functional Components
+App is the root component
+
+There is a virtual DOM and an actual DOM. React updates the actual DOM if the virtual DOM changes.
+
+Standard practice is to name function components starting with a capital letter.
+
+There can only be one parent element, most commonly a <div> tag
+
+React.createElement(      this is JavaScript
+Component<                this is JSX
+
+The name of the compiler is Babel
+
+To start a new project enter the following into the terminal. Making sure you are in the right directory.
+
+npx create-react-app [name of the app goes here]
+
+Afternoon session
+-----------------
+
+You cannot use the word class in React, class is a keyword inside React. Use className instead.
+
+State & Methods
+----------------
+
+useState hook (research this)
+
+NOTE: hooks do not work inside classes
+
+You can only pass props down the tree not up it.
+
+Check out Netninja for React and read the React Documentation
+
+Example of using useState:
+const [count, setCount] = useState(0)
+
+The useState function returns a pair of values which we restructure with []
+The first is a value, the second is a function to update the first
+
+Think of the state as a kind of storee, which holds the current state
+of the application.
+
+When the app loads, it will be rendered with the initial state (that you coded in)
+but as uses interact with your app, there state can change
+
+As well as having a state property inside our component, we can also have different
+methods (functions) which can do different things to our user interface

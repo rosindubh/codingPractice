@@ -1,0 +1,36 @@
+//phil welsby - 11 sept 2021
+
+Testing using jest:
+To set up the environment:
+1) create a folder with no spaces.
+2) create 2 files called [app.js] and [app.test.js]
+3) run: <npm init -y>
+4) run: <npm install --save-dev jest>
+5) edit line 7 of the package.json file to read ["test": "jest"]
+
+First we create the [app.test.js] file adding [let app = require("./app");]
+so we can acquire the app.js files contents.
+
+a test may look something like this:
+test('should equal 5 when passed 2 and 3', () => {
+  expect(app.add(2, 3)).toBe(5)
+});
+
+
+To run the test we enter: [npm test]
+The test will at this stage fail. Next create a function or whatever that we are
+testing for in the app.js file, and export the contents as follows:
+module.exports = {
+  <enter the name of the apps here with a comma after each like this>
+  add,
+  myFunction,
+  philsFunctions,
+  noOfFunctions: 3
+}
+
+If these 3 functions existed in the [app.js] file they would be accessible to the [app.test.js] file.
+
+We only covered Test Driven Development (TDD) today. Other type of testing are:
+Integration Testing
+Functional Testing
+
