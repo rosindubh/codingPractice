@@ -63,6 +63,12 @@ methods (functions) which can do different things to our user interface
 
 LINK: https://www.youtube.com/watch?v=0sSYmRImgRY
 
+go to settings and search for emmet, where it says emmet include languages
+add javascript to item and javascriptreact to value
+this will allow auto complete in the editor. eg type div.home and hit enter and it 
+will look like this:
+<div className="home"></div>
+
 install Simple React Snippets.
 you can now create a stateless functional component  by typing sfc and hitting Tab
 this will look like this:
