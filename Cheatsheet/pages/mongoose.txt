@@ -218,5 +218,41 @@ exports.addMovie = async (newFilm) => {
 };
 
 YOU SHOULD NOW BE ABLE TO TEST IF THIS ADDS DATA TO YOUR DATABASE
-VIDEO PAUSED AT 1:04:00 DATE OF VIDEO Thursday, September 9, 2021
+
+ADDITIONAL FUNCTION METHODS ARE READ, UPDATE AND DELETE
+HERE THE MODEL IS CALLED Band
+CODE COULD LOOK LIKE THIS:
+
+
+exports.updateLike = async (updateObj) => {
+    console.clear();
+    await Band.updateOne({name :updateObj.name}, {$set:{like: updateObj.like}});
+    console.log(`${updateObj.name} like updated to ${updateObj.like}`)
+}
+
+exports.listBands = async () => {
+    console.clear();
+    try {
+        const list = await Band.find({})
+        console.log("running...")
+        console.log(list)
+        console.log("closing connection...")
+    } catch (error) {
+        console.log(`Error in listBands ${error}`)
+    }
+}
+
+exports.removeBand = async (band) => {
+    console.clear();
+    try {
+        console.log('running...');
+        console.log(band.name, "is being deleted")
+        await Band.findOneAndDelete(band)
+        console.log(band.name, 'was deleted from database')
+        console.log('closing connection...');
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 
