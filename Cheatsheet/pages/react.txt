@@ -58,3 +58,29 @@ but as uses interact with your app, there state can change
 
 As well as having a state property inside our component, we can also have different
 methods (functions) which can do different things to our user interface
+
+-----------------------------------------------------------------------------------
+
+LINK: https://www.youtube.com/watch?v=0sSYmRImgRY
+
+install Simple React Snippets.
+you can now create a stateless functional component  by typing sfc and hitting Tab
+this will look like this:
+
+const  = () => {
+    return (  );
+}
+ 
+export default ;
+
+you then need to fill in the function name and it will look something like this:
+
+const Navbar = () => {
+    return (  );
+}
+ 
+export default Navbar;
+
+CONTINUE COURSE FROM HERE: 
+Full React Tutorial #6 - Adding Styles
+https://www.youtube.com/watch?v=NbTrGcz4DW8
