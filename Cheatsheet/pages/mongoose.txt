@@ -11,9 +11,9 @@ Next install Mongoose from the command line using npm:
 $ npm install mongoose --save
 
 
-____________________________
-CREATING A MONGOOSE DATABASE
-----------------------------
+_______________________________________________________________________________________
+|  CREATING A MONGOOSE DATABASE THAT COMFORMS TO CRUD (Create, Read, Update, Delete)  |
+---------------------------------------------------------------------------------------
 
 Basic setup
 -----------
@@ -217,7 +217,9 @@ exports.addMovie = async (newFilm) => {
   }
 };
 
-YOU SHOULD NOW BE ABLE TO TEST IF THIS ADDS DATA TO YOUR DATABASE
+*******************************************************************
+*YOU SHOULD NOW BE ABLE TO TEST IF THIS ADDS DATA TO YOUR DATABASE*
+*******************************************************************
 
 ADDITIONAL FUNCTION METHODS ARE READ, UPDATE AND DELETE
 HERE THE MODEL IS CALLED Band
