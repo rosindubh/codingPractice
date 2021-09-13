@@ -1,5 +1,21 @@
 phil welsby - 13 sept 2021
 
+*************************************
+* Creating a MySQL Database and User*
+*************************************
+
+sudo mysql -u root -p
+CREATE DATABASE exampledb;
+CREATE USER 'exampleuser'@'localhost' IDENTIFIED BY 'pimylifeup';
+GRANT ALL PRIVILEGES ON exampledb.* TO 'exampleuser'@'localhost';
+FLUSH PRIVILEGES;
+
+__________________________________________________________________________________________________
+
+----------------------------
+-COMMANDS FROM ANDY'S VIDEO-
+----------------------------
+
 CREATE DATABASE demoFilm;
 USE demoFilm;
 CREATE TABLE film (id INT AUTO_INCREMENT NOT NULL,
@@ -12,3 +28,32 @@ SELECT * FROM film;
 ALTER TABLE film ADD COLUMN director VARCHAR(50) DEFAULT "No Director Specified" AFTER actor;
 UPDATE film SET likey = "bad" WHERE filmName = "Spiderman";
 select * FROM film;
+
+
+__________________________________________________________________________________________________
+
+--------------------------------------------
+- Some of The Most Important SQL Commands: - 
+--------------------------------------------
+
+    SELECT - extracts data from a database
+    UPDATE - updates data in a database
+    DELETE - deletes data from a database
+    INSERT INTO - inserts new data into a database
+    CREATE DATABASE - creates a new database
+    ALTER DATABASE - modifies a database
+    CREATE TABLE - creates a new table
+    ALTER TABLE - modifies a table
+    DROP TABLE - deletes a table
+    CREATE INDEX - creates an index (search key)
+    DROP INDEX - deletes an index
+
+    
+    To create a DATABASE: CREATE DATABASE database_name;
+    To delete a DATABASE: DROP DATABASE database_name;
+    To create a TABLE:    First use: USE database_name;
+                          Then the following is an example:
+                          CREATE TABLE band (id INT AUTO_INCREMENT NOT NULL,filmName VARCHAR(50) NOT NULL,formed VARCHAR(50) DEFAULT "No Year Specified",likey VARCHAR(4) DEFAULT "good",PRIMARY KEY(id)); 
+    To delete a TABLE:    DROP TABLE table_name;
+    To delete a ROW:       DELETE FROM band WHERE ID=21;
+                          This would delete ID 21
