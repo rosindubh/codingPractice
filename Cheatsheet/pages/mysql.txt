@@ -1,0 +1,14 @@
+phil welsby - 13 sept 2021
+
+CREATE DATABASE demoFilm;
+USE demoFilm;
+CREATE TABLE film (id INT AUTO_INCREMENT NOT NULL,
+					filmName VARCHAR(50) NOT NULL,
+					actor VARCHAR(50) DEFAULT "No Actor Specified",
+                    likey VARCHAR(4) DEFAULT "good",
+                    PRIMARY KEY(id));
+INSERT INTO film (filmName) VALUES ("Spiderman");
+SELECT * FROM film;
+ALTER TABLE film ADD COLUMN director VARCHAR(50) DEFAULT "No Director Specified" AFTER actor;
+UPDATE film SET likey = "bad" WHERE filmName = "Spiderman";
+select * FROM film;

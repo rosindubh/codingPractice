@@ -45,6 +45,10 @@ const app = () => {
      page = './pages/mongoose.txt'
      displayPage(page)
    }
+  else if(command === 'mysql') {
+     page = './pages/mysql.txt'
+     displayPage(page)
+  }
   else if(command === 'node') {
     page = './pages/node.txt'
     displayPage(page)

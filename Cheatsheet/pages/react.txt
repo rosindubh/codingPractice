@@ -88,5 +88,5 @@ const Navbar = () => {
 export default Navbar;
 
 CONTINUE COURSE FROM HERE: 
-Full React Tutorial #6 - Adding Styles
-https://www.youtube.com/watch?v=NbTrGcz4DW8
+Full React Tutorial #8 - Using State (useState hook)
+https://www.youtube.com/watch?v=4pO-HcG2igk
