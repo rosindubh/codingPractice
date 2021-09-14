@@ -1,5 +1,7 @@
 phil welsby - 13 sept 2021
 
+YOUTUDE VIDEO LINK: https://www.youtube.com/watch?v=7S_tz1z_5bA 
+
 *************************************
 * Creating a MySQL Database and User*
 *************************************
@@ -29,6 +31,17 @@ ALTER TABLE film ADD COLUMN director VARCHAR(50) DEFAULT "No Director Specified"
 UPDATE film SET likey = "bad" WHERE filmName = "Spiderman";
 select * FROM film;
 
+*********************
+*COMMANDS USED WERE:*
+*********************
+
+CREATE DATABASE
+USE
+CREATE TABLE
+INSERT INTO
+SELECT * FROM
+ALTER TABLE
+UPDATE
 
 __________________________________________________________________________________________________
 
