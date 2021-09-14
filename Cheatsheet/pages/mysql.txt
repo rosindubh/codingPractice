@@ -68,7 +68,7 @@ ________________________________________________________________________________
                           Then the following is an example:
                           CREATE TABLE band (id INT AUTO_INCREMENT NOT NULL,filmName VARCHAR(50) NOT NULL,formed VARCHAR(50) DEFAULT "No Year Specified",likey VARCHAR(4) DEFAULT "good",PRIMARY KEY(id)); 
     To delete a TABLE:    DROP TABLE table_name;
-    To delete a ROW:       DELETE FROM band WHERE ID=21;
+    To delete a ROW:      DELETE FROM band WHERE ID=21;
                           This would delete ID 21
 
 *******************
