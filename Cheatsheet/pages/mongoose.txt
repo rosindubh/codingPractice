@@ -80,7 +80,7 @@ LINK: https://yargs.js.org/
 
 
 *********************************
-*connection.js                  * 
+*app.js                         * 
 *CODE SHOULD NOW LOOK LIKE THIS:*
 *********************************
 
