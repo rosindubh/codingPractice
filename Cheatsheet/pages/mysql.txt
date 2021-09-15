@@ -50,6 +50,8 @@ ________________________________________________________________________________
 CREATE DATABASE theMusicShop;
 GRANT ALL PRIVILEGES ON theMusicShop.* TO 'rosindubh'@'localhost';
 
+#Use the source command to load data into the MySQL Server:
+mysql> source c:\temp\mysqlsampledatabase.sql
 
 --------------------------------------------
 - Some of The Most Important SQL Commands: - 
