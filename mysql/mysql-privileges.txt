@@ -1,0 +1,6 @@
+#phil - welsby - 14 sept 2021
+
+#Example of how to assign privileges
+
+CREATE DATABASE theMusicShop;
+GRANT ALL PRIVILEGES ON theMusicShop.* TO 'rosindubh'@'localhost';

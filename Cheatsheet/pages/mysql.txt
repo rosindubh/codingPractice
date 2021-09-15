@@ -45,6 +45,12 @@ UPDATE
 
 __________________________________________________________________________________________________
 
+#Example of how to assign privileges
+
+CREATE DATABASE theMusicShop;
+GRANT ALL PRIVILEGES ON theMusicShop.* TO 'rosindubh'@'localhost';
+
+
 --------------------------------------------
 - Some of The Most Important SQL Commands: - 
 --------------------------------------------

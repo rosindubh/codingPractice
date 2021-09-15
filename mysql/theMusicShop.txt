@@ -1,0 +1,54 @@
+CREATE DATABASE theMusicShop;
+USE theMusicShop;
+CREATE TABLE customer (id INT AUTO_INCREMENT , name VARCHAR(50) NOT NULL, address VARCHAR(50) DEFAULT 'No Address Supplied',  credit_limit VARCHAR(6) DEFAULT 5000,  PRIMARY KEY(id));
+CREATE TABLE product (id INT AUTO_INCREMENT, name VARCHAR(50) NOT NULL, PRIMARY KEY (id));
+CREATE TABLE basket(customerID INT NOT NULL,
+firstItem INT,
+secondItem INT,
+thirdItem INT,
+fourthItem INT,
+FOREIGN KEY (customerID) REFERENCES customer(id),
+FOREIGN KEY (firstItem) REFERENCES product(id),
+FOREIGN KEY (secondItem) REFERENCES product(id),
+FOREIGN KEY (thirdItem) REFERENCES product(id),
+FOREIGN KEY (fourthItem) REFERENCES product(id));
+ALTER TABLE product ADD price INT NOT NULL;
+INSERT INTO customer (name) VALUES ("Jimmy Page"), ("Brian Robertson"), ("Dimebag Darrell"), ("Big Jim Sullivan");
+INSERT INTO product (name, price) VALUES ('Les Paul Standard', 4500), ('Stratocaster', 2100), ('Les Paul Deluxe', 2500), ('Stingray', 1800), ('Telecaster', 1755), ('SG', 1800);
+INSERT INTO basket (customerID, firstItem, secondItem, thirdItem, fourthItem) VALUES ((SELECT id FROM customer WHERE name = 'Jimmy Page'),
+                                                                                  (SELECT id FROM product WHERE name = 'Les Paul Standard'),
+                                                                                  (SELECT id FROM product WHERE name = 'Les Paul Deluxe'),
+                                                                                  (SELECT id FROM product WHERE name = 'Stratocaster'),
+                                                                                  (SELECT id FROM product WHERE name = 'Telecaster'));
+
+
+
+
+
+
+
+SELECT * FROM product ORDER BY price;
+SELECT *,
+CASE WHEN price > 1800 THEN 'Top of the range'
+WHEN price < 1800 THEN 'Bargin Bucket'
+ELSE "It's Middlee of the road"
+END AS stringOutput
+FROM product
+ORDER BY price desc;
+
+SELECT name, price FROM product WHERE name LIKE 'c%';
+
+UPDATE customer SET credit_limit = 350000 WHERE name = 'Jimmy Page';
+UPDATE customer SET credit_limit = 50000 WHERE name = 'Brian Robertson';
+UPDATE customer SET credit_limit = 5000 WHERE name = 'Big Jim Sullivan';
+UPDATE customer SET credit_limit = 750000 WHERE name = 'Dimebag Darrell';
+
+UPDATE customer SET address = 'somewhere in Heaven' WHERE name = 'Dimebag Darrell';
+
+
+
+--SHOW DATABASES;
+--SHOW TABLES;
+--SELECT * FROM customer;
+--SELECT * FROM product;
+--SELECT * FROM basket;

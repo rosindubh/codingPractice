@@ -1,0 +1,40 @@
+CREATE DATABASE myCafe;
+USE myCafe;
+CREATE TABLE user (id INT AUTO_INCREMENT, name VARCHAR(50) NOT NULL, PRIMARY KEY (id));
+CREATE TABLE product (id INT AUTO_INCREMENT, name VARCHAR(50) NOT NULL, PRIMARY KEY (id));
+CREATE TABLE basket(userID INT NOT NULL,
+firstItem INT,
+secondItem INT,
+thirdItem INT,
+fourthItem INT,
+FOREIGN KEY (userID) REFERENCES user(id),
+FOREIGN KEY (firstItem) REFERENCES product(id),
+FOREIGN KEY (secondItem) REFERENCES product(id),
+FOREIGN KEY (thirdItem) REFERENCES product(id),
+FOREIGN KEY (fourthItem) REFERENCES product(id));
+ALTER TABLE product ADD price INT NOT NULL;
+INSERT INTO user (name) VALUES ("andy"), ("steve"), ("gary"), ("clive");
+INSERT INTO product (name, price) VALUES ('carrot', 0.45), ('swede', 0.55), ('potato', 0.27), ('tomato', 0.48), ('apple', 0.80), ('coffee', 1.45), ('tea', 2.56), ('cake', 1.09);
+INSERT INTO basket (userID, firstItem, secondItem, thirdItem, fourthItem) VALUES ((SELECT id FROM user WHERE name = 'andy'),
+                                                                                  (SELECT id FROM product WHERE name = 'apple'),
+                                                                                  (SELECT id FROM product WHERE name = 'coffee'),
+                                                                                  (SELECT id FROM product WHERE name = 'tomato'),
+                                                                                  (SELECT id FROM product WHERE name = 'tea'));
+SELECT * FROM product ORDER BY price;
+SELECT *,
+CASE WHEN price > 1 THEN 'More than a quid'
+WHEN price < 1 THEN 'Less than a quid'
+ELSE "It's a quid"
+END AS stringOutput
+FROM product
+ORDER BY price desc;
+
+SELECT name, price FROM product WHERE name LIKE 'c%';
+
+
+
+--SHOW DATABASES;
+--SHOW TABLES;
+--SELECT * FROM user;
+--SELECT * FROM product;
+--SELECT * FROM basket;
