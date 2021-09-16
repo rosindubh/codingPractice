@@ -136,3 +136,92 @@ A FOREIGN KEY is a field (or collection of fields) in one table, that refers to 
 
 The table with the foreign key is called the child table, and the table with the primary key is called the referenced or parent table.
 
+****************************************************************************************************************************************
+****************************************************************************************************************************************
+
+
+********************************************************
+* SETTING UP A NODE CONNECTION TO CLOUD MYSQL DATABASE *
+********************************************************
+
+Create a GitHub repo and clone
+THEN SET UP STANDARD FILE/FOLDER TEMPLATE
+
+
+
+Looks like this inside the parent folder
+
+.
+├── app.js
+├── db
+│   └── connection.js
+└── film
+    ├── film.methods.js
+    └── film.model.js
+
+Create .env and .gitignore files
+Add .env and node_modules to gitignore file
+Add MYSQL_URI = [uri path to cloud goes here] to .env file
+Next run npm init -y inside the parent folder
+
+Now run the following: npm i dotenv sequelize mysql2
+
+
+**********************************
+* connection.js looks like this: *
+**********************************
+
+const { Sequelize } = require("sequelize");
+require("dotenv").config();
+
+exports.sequelize = new Sequelize(process.env.MYSQL_URI)
+
+THIS IS ALL THAT IS REQUIRED TO CREATE THE CONNECTION
+
+
+***************************
+ * app.js looks like this *
+***************************
+
+const command = process.argv[2];
+
+const app = async () => {
+   switch (command) {
+      case "add":
+         const filmObj = {
+             name: process.argv[3],
+             actor: process.argv[4],
+             like: process.argv[5]
+         };
+         //Pass filmObj to addFilm function
+      case "list":         
+         //find all films from MySQL DB
+   }
+};
+
+app();
+
+*********************************
+* film.model.js looks like this *
+*********************************
+
+const { sequelize  } = require("../db/connection");
+const { DataTypes } = require("sequelize");
+
+const Film = sequelize.define("Film", {
+  name: {
+      type: DataTypes.STRING,
+      allowNull: false
+  },
+  actor: {
+      type: DataTypes.STRING,
+      defaultValue: "Not specicified",
+  },
+  like: {
+      type: DataTypes.STRING,
+      defaultValue: "good",
+  },
+
+});
+
+module.exports = Film;
