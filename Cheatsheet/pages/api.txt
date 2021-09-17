@@ -13,7 +13,7 @@ React life-cycle link: https://projects.wojtekmaj.pl/react-lifecycle-methods-dia
 
 componentDidMount Method
 ------------------------
-This is no loger as popular due to the arrival of hooks and the use of functionale components
+This is no longer as popular due to the arrival of hooks and the use of functional components
 This method called handelFetch
 
 
@@ -23,7 +23,7 @@ This was used as confirmation that the component mounted and feed to console
 
 componentWillUnmount Method
 ---------------------------
-This is like a clean-up say ifyou were to click off the page
+This is like a clean-up say if you were to click off the page
 
 Throw and Try to Catch
 ----------------------

@@ -33,7 +33,7 @@ MODULARITY
 Exporting the contents of a file
 ----------------------------------
 
-In node we can't use export defaut like we do in React
+In node we can't use export default like we do in React
 Instead there are 2 ways we can do it
 
 1) [module.exports = [function name] at the bottom of the file
@@ -58,4 +58,4 @@ Here we would be in the src folder and our tree would look as follows:
     └── index.js
 Note by calling the file in the utils folder index.js we don't have to include it in the path
 
-We use modularity to separate our concers, this makes debubbing easier as the code is not one huge file
+We use modularity to separate our concerns, this makes debugging easier as the code is not one huge file

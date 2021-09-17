@@ -58,7 +58,7 @@ Next we go to app.js file and the first thing we do is require connection.js bec
 when we start app.js. We do this with this line of code: 
 require('./db/connection');
 
-This means db/connection is going to run on line 1 of app.js ands the connection is going to stay open until told to close.
+This means db/connection is going to run on line 1 of app.js and the connection is going to stay open until told to close.
 
 Now we require access to mongoose if we want to disconnect with this line of code: 
 const mongoose = require('mongoose');
@@ -68,7 +68,7 @@ we haven't made it yet. This is done with the following line of code:
 const {addMovie} = require('./films/film.methods');
 NOTE: addMovive is the function in this case, it will be different in your project.
 NOTE: ./films/film.methods is the path to the file called film.methods.js
-The next time app.js is run addMove must have something in it, even if it's only a consoile.log
+The next time app.js is run addMove must have something in it, even if it's only a console.log
 
 The last thing we need to add is the command variable to catch argv[2] in the terminal, 
 and assign it to variable named command.
@@ -189,7 +189,7 @@ const Film = require('./film.model');
 
 NOTE: the file film.model.js resides in the same folder as film.methods.js
 
-We then export our addMove function we decalred in app.js earlier as follows:
+We then export our addMove function we declared in app.js earlier as follows:
 
 exports.addMovie = async (newFilm) => {
     try {
