@@ -63,7 +63,9 @@ Now create an asycronous function in the connection.js file using <async>
 THIS IS BECAUSE THE TIMELINE IS NOW OUTSIDE OF THE APPLICATION AND THE CODE NEEDS TO WAIT
 UNTIL THE TIMELINE RETURNS TO THE APPLICATION WHEN THE REQUEST HAS COMPLETED
 
-Code will look like this:
+*****************************
+* connection.js will look like this: *
+*****************************
 
 const {MongoClient} = require("mongodb");
 require("dotenv").config(); //this allows you to access a .env file in your project
@@ -72,13 +74,65 @@ require("dotenv").config(); //this allows you to access a .env file in your proj
 const client = new MongoClient(process.env.MONGO_URI)
 
 const connection = async (crudFunc, dataObj) => {
-  await client.connect();
-  const db = client.db("bands");
-  const collection = db.collection("band");
-  collection.insertOne({name: "Eagles"})
-//  await crudFunc(collection, dataObj
-//  client.close();
+  try {
+    await client.connect();
+    const db = client.db("bands");
+    console.log(db);
+    const collection = db.collection("band");
+    console.log(collection);
+    const newEntry = collection.insertOne({name: "Opeth"})
+//    await crudFunc(collection, dataObj)
+    console.log(newEntry);
+//    client.close();
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 //module.exports = connection;
 connection();
+
+NOW IF YOU RUN THE connection.js FILE IN THE src/db FOLDER
+
+
+******************************
+* app.js WILL LOOK LIKE THIS: *
+******************************
+
+const connection = require("./db/connection");
+const {addMovie, listMovies} = require("./utils");
+const command = process.argv[2];
+
+const app = async () => {
+    if (command === "add") {
+        const newMovie = {
+            name: process.argv[3],
+            actor: process.argv[4],
+            like: process.argv[5]
+        }
+        await connection(addMovie, newMovie)
+    } else if (command === 'list') {
+        await connection(listMovies)
+    }
+}
+
+app();
+
+
+****************************
+* index.js WILL LOOK LIKE THIS *
+****************************
+
+exports.addMovie = async (collection, dataObj) => {
+    try {
+        await collection.insertOne(dataObj);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+exports.listMovies = async (collection) => {
+    const list = await collection.find({}).toArray();
+    console.log(list);
+}
+
