@@ -1,0 +1,84 @@
+# phil welsby - 20 sept 2021
+
+first set up a git repo and clone
+
+next create the file stucture from inside the parent folder it will look like this:
+
+.
+└── src
+    ├── controllers
+    │   └── index.js
+    ├── routes
+    │   └── index.js
+    └── server.js
+
+then run npm init -y
+
+again inside the parent folder run this command to intall express:
+npm install express
+
+and to install nodemon so you don't have to keep restarting the server run:
+npm install --save-dev nodemon
+
+add this to the package.json file uder test, remember to put a comma at the end of test:
+"dev": "nodemon src/server.js"
+
+*****************************************************
+* next create the server.js it could look like this: *
+*****************************************************
+
+const express = require("express");
+const app = express();
+const helloRouter = require("./routes")
+app.use(express.json());
+
+app.use(helloRouter)
+
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+    console.log(`Listening on port ${port}...`);
+});
+
+
+**********************************************
+* index.js in routes folder could look like this: *
+**********************************************
+
+//routes
+const {Router} = require("express");
+const helloRouter = Router();
+const {testObj} = require("../controllers")
+
+helloRouter.get("/testObj", testObj);
+
+module.exports = helloRouter;
+
+********************************************
+* index.js in controllers could look like this: * 
+********************************************
+
+//controllers
+const obj = [
+    {
+        id: 0,
+        name: 'phil',
+        age: 61,
+
+    }
+];
+
+exports.testObj = (req, res) => {
+    res.send(obj);
+}
+
+
+
+NOW ENTER http://[ip address of server]:5000/testObj and it should return the following:
+
+    {
+        id: 0,
+        name: 'phil',
+        age: 61,
+
+    }
+

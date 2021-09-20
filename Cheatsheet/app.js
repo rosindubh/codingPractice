@@ -60,10 +60,14 @@ const app = () => {
   else if(command === 'react') {
     page = './pages/react.txt'
     displayPage(page)
-}
+  }
+  else if(command === 'rest-api') {
+    page = './pages/rest-api.txt'
+    displayPage(page)
+  }
   else {
     console.clear();
-    console.log(`${command} is not listed...\n\nchoices are: \napi\narrays\nclasses\nflexbox\nfunctions\njest\nloops\nmongo\nmongoose\nnode\nobject\nreact\n`)
+    console.log(`${command} is not listed...\n\nchoices are: \napi\narrays\nclasses\nflexbox\nfunctions\njest\nloops\nmongo\nmongoose\nnode\nobject\nreact\nrest-api\n`)
   }
 
 }
