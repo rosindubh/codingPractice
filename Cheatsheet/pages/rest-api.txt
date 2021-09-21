@@ -82,3 +82,53 @@ NOW ENTER http://[ip address of server]:5000/testObj and it should return the fo
 
     }
 
+*****************************************************************
+* GETTING server TO COMMUNICATE WITH mongo Atlas USING mongoose *
+*****************************************************************
+
+First set up a mongoose connection:
+
+************************
+* Code looks like this *
+************************
+
+const mongoose = require("mongoose");
+require("dotenv").config();
+
+const connection = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("We Have Success");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+connection();
+
+
+YOU WILL NEED TO INSTALL cors BY RUNNING THE FOLLOWING INSIDE THE PARENT FOLDER:
+npm i cors
+
+THEN EDIT THE server.js FILE ADDING THE cors LINES TO LOOK LIKE THIS:
+
+require("./db/connection");
+const express = require("express");
+const cors = require("cors");
+const app = express();
+const helloRouter = require("./routes")
+app.use(express.json());
+app.use(cors());
+
+app.use(helloRouter)
+
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+    console.log(`Listening on port ${port}...`);
+});
+
+
+REMEMBER TO ADD THE MONGO_URI INTO THE .env FILE AND ADD .env TO THE .gitignore FILE
+IT SHOULD NOW BE POSSIBLE TO UPDATE THE Atlas DATABASE ON MONGODB SERVER SIDE USING Insomnia
+AND TEST THE HTTP VERBS: GET POST PUT PATCH DELETE
+
