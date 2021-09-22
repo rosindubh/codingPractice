@@ -221,6 +221,15 @@ exports.addFilm = async (req, res) => {
 
 ONLY GET AND POST EXAMPLES ARE SHOWN HERE
 
+NOTE DELETE CANNOT HAVE A BODY, ALLTHOUGH APPS LIKE INSOMNIA, POSTMAN AND THUNDER CLIENT WILL 
+PROCESS A BODY ON A GET / DELETE REQUEST
+YOU CANNOT SEND A BODY ON A FETCH REQUEST!!!
+
+ALSO THE SYNTAX FOR DELETE IS DIFFERENT BECAUSE OF THIS IT IS USED WITH A PARAMETER LIKE THIS:
+
+helloRouter.delete("/films/:name", deleteFilm);
+
+GET INTO THE HABIT OF NOT USING A BODY WITH GET AND DELETE REQUESTS
 
 *****************************************************************************
 *****************************************************************************
@@ -240,3 +249,14 @@ ONLY GET AND POST EXAMPLES ARE SHOWN HERE
 9) Test GET POST PUT PATCH DELETE from Thunder Client for a response
 10) Create a PUSH to MongoDB and test working
 11) Add GET function and test
+
+
+
+*********************************************************************************
+*********************************************************************************
+
+**************
+* MIDDLEWARE *
+**************
+
+
