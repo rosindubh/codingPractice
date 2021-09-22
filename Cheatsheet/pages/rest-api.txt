@@ -116,7 +116,8 @@ require("./db/connection");
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const helloRouter = require("./routes")
+const helloRouter = require("./routes");
+
 app.use(express.json());
 app.use(cors());
 
@@ -131,4 +132,93 @@ app.listen(port, () => {
 REMEMBER TO ADD THE MONGO_URI INTO THE .env FILE AND ADD .env TO THE .gitignore FILE
 IT SHOULD NOW BE POSSIBLE TO UPDATE THE Atlas DATABASE ON MONGODB SERVER SIDE USING Insomnia
 AND TEST THE HTTP VERBS: GET POST PUT PATCH DELETE
+
+NEXT INSTALL Mongoose LIKE THIS
+npm i mongoose
+
+THEN CREATE A .env FILE INSIDE THE PARENT FOLDER AND ADD IT TO .gitignore
+NOW ADD THE MONGO_URI TO THE .env FILE
+
+NEXT CREATE A db FOLDER INSIDE THE src FOLDER AND CREATE A FILE CALLED connection.js INSIDE THE db FOLDER
+THIS FILE IS USED TO MAKE CONNECTION TO Atlas AND THE MongoDB DATABASE, IT WILL LOOK LIKE THIS:
+
+const mongoose = require("mongoose");
+require("dotenv").config();
+
+const connection = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("We Have Success");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+connection();
+
+YOU CAN NOW TEST THE CONNECTION BY RUNNING IT WITH THIS COMMAND:
+node src/db/connection.js
+
+MAKE SURE THAT THE FIRST LINE OF THE server.js FILE CONTAINS THE LINE
+require("./db/connection")
+
+NEXT INSIDE THE src FOLDER CREATE A FOLDER CALLED models AND ADD A FILE CALLED index.js
+
+*****************************************
+* THE MODEL STRUCTURE LOOKS LIKE THIS:  *
+*****************************************
+
+const mongoose = require("mongoose");
+
+const filmSchema = mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  actor: {
+    type: String,
+  },
+  watched: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+});
+
+const Film = mongoose.model("Film", filmSchema);
+
+module.exports = Film;
+
+YOU NOW NEED TO ADD THIS TO THE controller.js FILE WITH THE LINE:
+const Film = require("../models");
+FILM WAS THE EXAMPLE HERE YOUR'S MAY BE DIFFERENT
+
+**************************************************************
+* index.js INSIDE THE CONTROLLERS FOLDER WILL LOOK LIKE THIS *
+**************************************************************
+
+const Film = require("../models")
+
+exports.findFilms = async (req, res) => {
+  try {
+    const list = await Film.find({});
+    res.status(200).send({ allFilms: list });
+  } catch (error) {
+    res.status(500).send({ err: error });
+  }
+};
+
+exports.addFilm = async (req, res) => {
+  try {
+    const film = new Film(req.body);
+    await film.save();
+    res.status(200).send({ film: film, message: "Successfully added film" });
+  } catch (error) {
+    res.status(500).send({ err: error });
+  }
+};
+
+ONLY GET AND POST EXAMPLES ARE SHOWN HERE
+
 
