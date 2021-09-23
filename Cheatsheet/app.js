@@ -37,6 +37,10 @@ const app = () => {
     page = './pages/loops.txt'
     displayPage(page)
   }
+   else if(command === 'middleware') {
+    page = './pages/middleware.txt'
+    displayPage(page)
+  }
    else if(command === 'mongo') {
      page = './pages/mongo.txt'
      displayPage(page)
@@ -67,7 +71,7 @@ const app = () => {
   }
   else {
     console.clear();
-    console.log(`${command} is not listed...\n\nchoices are: \napi\narrays\nclasses\nflexbox\nfunctions\njest\nloops\nmongo\nmongoose\nnode\nobject\nreact\nrest-api\n`)
+    console.log(`${command} is not listed...\n\nchoices are: \napi\narrays\nclasses\nflexbox\nfunctions\njest\nloops\nmiddleware\nmongo\nmongoose\nnode\nobject\nreact\nrest-api\n`)
   }
 
 }

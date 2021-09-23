@@ -1,0 +1,104 @@
+# phil welsby - 23 sept 2021
+
+**************
+* MIDDLEWARE *
+**************
+
+Middleware is software that operates between the client requesr sand the server response
+
+First create a user function in controllers that looks like this:
+
+ exports.addUser = async (req, res) => {
+    try {
+      const user = new User(req.body);
+      await user.save();
+      res.status(200).send(user)
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  }
+
+
+
+
+Then you will need to create a model that looks something like this:
+
+const userSchema = mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true,
+    },
+    password: {
+        type: String,
+        required: true
+    }
+})
+
+const User = mongoose.model("User", userSchema);
+
+module.exports = {User};
+
+
+
+
+Then create 2 functions, one to send the data and one to hash the password :
+
+const bcrypt = require("bcryptjs")
+
+//test function
+exports.testMiddle = (req, res, next) => {
+    try {
+        console.log(req.body)
+        req.user = "Phil"
+        next();
+    } catch (error) {
+        res.status(500).send(error);
+    }
+}
+
+exports.hashPassword = async (req, res, next) => {
+    try {
+        const hashedPassword = await bcrypt.hash(req.body.password, 8);
+        req.body.password = hashedPassword
+        next()
+    } catch (error) {
+        res.status(500).send(error);
+        
+    }
+}
+
+
+NOTE YOU WILL NEED TO INSTALL A DEPENDENCY bcryptjs WITH:
+npm i bcryptjs
+
+YOU WILL THEN NEED TO require THE FUNCTIONS AND CALL THEM WITH THESE 2 LINES IN YOUR routes file:
+
+const {testMiddle, hashPassword} = require("../middleware")
+helloRouter.post("/user", hashPassword, addUser);
+
+
+REMEMBER IF YOU CALL 2 require 2 FUNCTIONS IN THE SAME LINE OF CODE TO DECOSTRUCT THEM
+BY WRAPPING IN CURLY BRACES LIKE THIS:
+const {Guitar, User} = require("../guitar/guitar.models");
+
+YOU SHOULD NOW BE ABLE TO MAKE A POST REQUEST IN THUNDER CLIENT OR IN SOMNIA WITH THIS IN THE BODY:
+
+{
+    "name": "Phil",
+    "email": "phil@email.com",
+    "password": "test123"
+}
+
+AND RECEIVE A REPLY SIMILAR TO THIS: {
+  "name": "Phil",
+  "email": "phil@email.com",
+  "password": "$2a$08$viFKd/xBv99bpNXVbGTEB.NnSQSoMpBE4vN37LU9BZJBRF5geFNkW",
+  "_id": "614cee4f2d5322a5513fc9b9",
+  "__v": 0
+}
+
+
