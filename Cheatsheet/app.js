@@ -29,6 +29,10 @@ const app = () => {
     page = './pages/functions.txt'
     displayPage(page)
   }
+  else if (command === 'json-web-tokens') {
+    page = './pages/json-web-tokens.txt'
+    displayPage(page)
+  }
   else if(command === 'jest') {
     page = './pages/jest.txt'
     displayPage(page)
