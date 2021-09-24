@@ -85,7 +85,7 @@ REMEMBER IF YOU CALL 2 require 2 FUNCTIONS IN THE SAME LINE OF CODE TO DECOSTRUC
 BY WRAPPING IN CURLY BRACES LIKE THIS:
 const {Guitar, User} = require("../guitar/guitar.models");
 
-YOU SHOULD NOW BE ABLE TO MAKE A POST REQUEST IN THUNDER CLIENT OR IN SOMNIA WITH THIS IN THE BODY:
+YOU SHOULD NOW BE ABLE TO MAKE A POST REQUEST IN THUNDER CLIENT OR INSOMNIA WITH THIS IN THE BODY:
 
 {
     "name": "Phil",
@@ -101,4 +101,65 @@ AND RECEIVE A REPLY SIMILAR TO THIS: {
   "__v": 0
 }
 
+SO THAT HAS CREATED AND POSTED A USER WITH THE PASSWORD ENCRYPTED
+NOW WE NEED TO RETRIEVE IT AND UN-ENCRYPT THE PASSWORD
+
+FIRST WE CAN CREATE A FUNCTION TO DE-CRYPT THE PASSWORD LIKE THIS:
+
+exports.decryptPassword = async (req, res, next) => {
+    try {
+        const user = await User.findOne({email: req.body.email});
+        const passwordsMatch = await bcrypt.compare(
+          req.body.password, 
+          user.password
+        );
+        if (passwordsMatch) {
+          req.user = user; //NOTE: THIS req.user IS USED IN THE findUser FUNCTION
+          next()
+        } else {
+          throw new Error
+        }
+    }   catch { (error) {
+        res.status(500).send(error);
+    }
+}
+
+THE FUNCTION NEEDS TO HAVE THE USER DATA IN ORDER TO DOT HE COMPARE
+req.body.password IS THE RAW DATA, SO WE NEED TO require THE User MODEL
+FROM THE models.js FILE WITH A LINE THAT LOOKS LIKE THIS:
+const { User } = require ("../models");
+NOTE User IS IN CURLY BRACES IF IT IS BEING DECONSTRUCTED
+find ONLY NEEDS A FILTER AND IT WILL RETURN THE ENTIRE USER DATABASE ENTRY
+USING email GIVES IT AN EXTRA LAYER OF SECURITY BACAUSE name IS NOT UNIQUE
+compare TAKES THE STRING AND THEN THE HASHED STRING
+WE NEXT NEED TO CHECK IF passwordsMatch IS true OR NOT USING AN else/if
+IF passwordsMatch IS NOT true THEN WE throw new Error
+AS SOON AS THIS ERROR IS THROWN WE MOVE INTO OUR catch BLOCK TO DEAL WITH IT
+THIS COULD HAPPEN IF A USER WERE TO PUT IN THE WRONG PASSWORD FOR EXAMPLE
+SO next ISN'T GETTING CALLED AND WE DON'T INADVERTANTLY END UP IN OUR controller 
+ALL THIS IS BEING DONE IN middleware BUT COULD BE ACOMPLISHED WITH ONE LINE IN THE controller
+
+FIRST IMPORT decryptPassword INTO THE route FILE USING require
+NEXT WE GO TO OUR ROOTS FILE AND ADD A NEW ROUTE. THIS MUST BE UNIQUE SO IN OUR EXAMPLE WE GIVE A
+NEW ROUTE BECAUSE WE HAVE ALREADY USED user AS A ROUTE WE ADD A LINE LIKE THIS
+helloRouter.post("/user/login", decryptPassword, findUser);
+
+NOTE AT THIS POINT findUser DOES NOT EXIST AND WE HAVE TO CREATE IT IN OUR controllers FILE
+
+exports.findUser = async (req, res) => {
+  try {
+    res.status(200).send(req.user) //NOTE: req.user CAME FROM decryptPassword IN middleware FILE
+  } catch (error) {
+    res.status(500).send(error);
+  }
+}
+
+NOTE: findUser FUNCTION WILL NOW NEED TO BE IMPORTED INTO THE routes FILE
+YOU SHOULD NOW BE ABLE TO DO A POST REQUEST WITH THE user/login ENDPOINT
+AND THIS IN THE BODY:
+
+{
+  "email": "phil@email.com",
+  "password": "test123"
+}
 
