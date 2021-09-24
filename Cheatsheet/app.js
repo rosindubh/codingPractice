@@ -75,7 +75,7 @@ const app = () => {
   }
   else {
     console.clear();
-    console.log(`${command} is not listed...\n\nchoices are: \napi\narrays\nclasses\nflexbox\nfunctions\njest\nloops\nmiddleware\nmongo\nmongoose\nnode\nobject\nreact\nrest-api\n`)
+    console.log(`${command} is not listed...\n\nchoices are: \napi\narrays\nclasses\nflexbox\nfunctions\njest\njson-web-tokens\nloops\nmiddleware\nmongoose\nmongo\nmysql\nnode\nobject\nreact\nrest-api\n`)
   }
 
 }
