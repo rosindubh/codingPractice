@@ -2,7 +2,7 @@
 
 first set up a git repo and clone
 
-next create the file stucture from inside the parent folder it will look like this:
+next create the file stucture from inside the parent folder, something like this:
 
 .
 └── src
@@ -13,8 +13,13 @@ next create the file stucture from inside the parent folder it will look like th
     └── server.js
 
 then run npm init -y
+then run npm i mongoose --save 
 
-again inside the parent folder run this command to intall express:
+NOTE: this is if you are using MongoDB 
+you would install sequelize for mysql along with mysql2 like this 
+npm i sequelize mysql2
+
+again inside the parent folder run this command to install express:
 npm install express
 
 and to install nodemon so you don't have to keep restarting the server run:
@@ -23,13 +28,38 @@ npm install --save-dev nodemon
 add this to the package.json file uder test, remember to put a comma at the end of test:
 "dev": "nodemon src/server.js"
 
+now run npm i dotenv
+YOU WILL NEED TO ADD TO URI TO THE .env FILE
+
+*********************************************************
+* NOW CREATE A CONNECTIONS FILE AND TEST THE CONNECTION *
+*********************************************************
+
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+const connection = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URI)
+        console.log('Successfully connected...');
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+connection();
+
+********************************************************************
+* use NODE to test the connection by running this file on it's own *
+********************************************************************
+
 *****************************************************
 * next create the server.js it could look like this: *
 *****************************************************
 
 const express = require("express");
 const app = express();
-const helloRouter = require("./routes")
+const helloRouter = require("<PATH TO ROUTE FILE HERE>")
 app.use(express.json());
 
 app.use(helloRouter)
@@ -40,22 +70,29 @@ app.listen(port, () => {
 });
 
 
-**********************************************
+***********************************
+* to set a specific port say 3000 *
+* run this in the terminal:  ******
+* export PORT=3000 ****************
+***********************************
+
+
+***************************************************
 * index.js in routes folder could look like this: *
-**********************************************
+**************************************************
 
 //routes
 const {Router} = require("express");
 const helloRouter = Router();
-const {testObj} = require("../controllers")
+const {testGet} = require("<PATH TO CONTROLLERS FILE HERE>")
 
-helloRouter.get("/testObj", testObj);
+helloRouter.get("/testGet", testGet);
 
 module.exports = helloRouter;
 
-********************************************
+*************************************************
 * index.js in controllers could look like this: * 
-********************************************
+*************************************************
 
 //controllers
 const obj = [
@@ -67,8 +104,8 @@ const obj = [
     }
 ];
 
-exports.testObj = (req, res) => {
-    res.send(obj);
+exports.testGet = (req, res) => {
+    res.send("Reply from GET");
 }
 
 
