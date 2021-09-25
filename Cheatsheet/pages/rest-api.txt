@@ -72,8 +72,9 @@ exports.testObj = (req, res) => {
 }
 
 
-
-NOW ENTER http://[ip address of server]:5000/testObj and it should return the following:
+********************************************************************************************
+* NOW ENTER http://[ip address of server]:5000/testObj and it should return the following: *
+********************************************************************************************
 
     {
         id: 0,
