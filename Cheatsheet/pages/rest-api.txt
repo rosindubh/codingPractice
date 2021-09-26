@@ -278,7 +278,7 @@ GET INTO THE HABIT OF NOT USING A BODY WITH GET AND DELETE REQUESTS
 
 1) Create GitHub repo and clone
 2) Create file structure
-3) install dependencies, create connection.js and teat connection
+3) install dependencies, create connection.js and test connection
 4) Install express/nodemon, edit package.json to run nodemon
 5) Setut server.js/router/controller and test GET
 6) test nodemon working ok
