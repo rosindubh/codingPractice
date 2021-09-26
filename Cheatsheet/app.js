@@ -69,13 +69,17 @@ const app = () => {
     page = './pages/react.txt'
     displayPage(page)
   }
+  else if (command === 'react-router-dom') {
+    page = './pages/react-router-dom.txt'
+    displayPage(page)
+  }
   else if(command === 'rest-api') {
     page = './pages/rest-api.txt'
     displayPage(page)
   }
   else {
     console.clear();
-    console.log(`${command} is not listed...\n\nchoices are: \napi\narrays\nclasses\nflexbox\nfunctions\njest\njson-web-tokens\nloops\nmiddleware\nmongoose\nmongo\nmysql\nnode\nobject\nreact\nrest-api\n`)
+    console.log(`${command} is not listed...\n\nchoices are: \napi\narrays\nclasses\nflexbox\nfunctions\njest\njson-web-tokens\nloops\nmiddleware\nmongoose\nmongo\nmysql\nnode\nobject\nreact\nreact-router-dom\nrest-api\n`)
   }
 
 }

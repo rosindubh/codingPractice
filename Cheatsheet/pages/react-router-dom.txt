@@ -1,0 +1,11 @@
+#phil welsby - 26 sept 2021
+# notes on react router dom
+#LINK: https://www.youtube.com/watch?v=Jppuj6M1sJ4
+
+To use react router dom install from parent directory:
+npm i react-router-dom
+
+import into App.js
+import { BrowserRouter as Router, Route} from "react-router-dom";
+
+
