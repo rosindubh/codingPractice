@@ -1,0 +1,62 @@
+the heroku page
+
+SETTING UP A NEW PROJECT
+------------------------
+
+Select New at the top right of the page
+
+From dropdown menu select create new app
+
+Add an App name and choose region (Europe in our case)
+
+Don't add a pipeline (Used for working with CI/CD )
+
+Select Create App
+
+Click on GitHub for the deployment method
+
+Enter Repo name in the Seach box and click search
+
+Once found click on connect
+
+Select GitHub branch (usually main)
+
+Don't select wait for CI to pass before deploy
+
+Don't Enable Automatic deploy
+
+BEFORE DEPLOYING BRANCH GO TO SETTINGS
+
+Click the Reveal config Vars button
+
+Add MONGO_URI in the KEY box and the Mongo connection string in the Value box
+
+Next add Your SECRET in the same way (basically the contents of your .env file)
+
+Next add a buildpack in our case nodejs
+
+NEXT GOT TO GitHub AND THE Repo YOU ARE DEPLOYING AND DO THE FOLLOWING
+
+Inside the parent directory create a new file called .Procfile
+On the first line write what is called a dyno, this is a script that will run the program
+Add the following line to the .Procfile
+web: npm start
+
+Next open your package.json file and check to see if you have a start script
+If you don't then add one like this:
+"start": "node src/server.js"
+DON'T FORGET THE COMMA AT THE END OF THE LINE
+THIS CAN BE DONE IN LOCAL REPO AND PUSHED TO GitHub
+
+Go back to HeroKu and select Deploy from menubar at the top, 
+go all the way to the bottom and Deploy Branch
+Go to the top click on More and select view logs and confirm the build has no errors
+If you put a console log in your connection.js file it will output in the logs on HJeroKu
+
+Now go to settings and where the Domains Title is on the left, 
+the Domain URL will be listed on the right
+This is what goes into your fetch request in your frontend
+
+
+
+
