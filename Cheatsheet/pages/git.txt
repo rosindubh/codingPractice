@@ -1,0 +1,5 @@
+git checkout -b dev
+this will create a new branch called dev and move you into it
+this is so you can work on your project and not break the production version
+when you are happy you can merge, pull main and continue to work in the dev
+branch
