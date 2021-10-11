@@ -1,0 +1,80 @@
+variables 
+if/else switch
+functions
+arrays
+loops
+objects
+classes
+Javascript
+regular expressions - ternery &&  NOTE:research this
+html and css
+attributes
+flexbox
+animations
+js dom
+keycode challenge
+dice challenge
+Node and NPM
+scope and high order functions
+React
+unit testing
+state and methods
+Test Driven Development (TDD)
+Deploying React
+Node Js
+Mongo DB
+MongoDb Atlas
+Mongoose
+Docker
+MySQL
+CRUD operations
+insomnia
+middleware
+ecpress
+bcryptjs
+cors
+dorenv
+myphpadmin
+API
+Rest API
+lodash
+Thunder Client
+bcryptjs
+react router dom
+mumblewrap
+CI/CD
+AWS Lamdba
+Netify
+Heroku
+Figma
+
+https://Codepen.io
+https://Coolors.co
+https://unsplash.com/
+https://html-css-js.com/css/generator/box-shadow/
+https://fonts.google.com/
+https://www.npmjs.com/?track=newUserCreated
+https://nodejs.org/en/
+https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg (net ninja)
+https://reactjs.org/
+https://lodash.com/
+https://insomnia.rest/
+https://archive.jestjs.io/en/
+https://www.sitepoint.com/react-router-complete-guide/ (React Router v5 )
+https://reactrouter.com/web/guides/quick-start
+https://www.npmjs.com/package/mongodb
+https://www.mongodb.com/
+https://mongoosejs.com/docs/api.html
+https://www.clever-cloud.com/en/
+https://demo.phpmyadmin.net/master-config/index.php?route=/server/sql&lang=en
+https://www.mysql.com/
+https://www.javatpoint.com/mysql-aggregate-functions
+https://www.mysql.r2schools.com/how-to-run-sql-script-in-mysql/
+https://www.mysqltutorial.org/
+https://www3.ntu.edu.sg/home/ehchua/programming/sql/SampleDatabases.html#zz-4.
+https://snapcraft.io/install/mysql-workbench-community/mint
+https://sequelize.org/
+https://keycode.info/
+https://developer.mozilla.org/en-US/docs/Web/API/UIEvent/which (UIEvent.which)
+https://freefrontend.com/css-animation-examples/
+
