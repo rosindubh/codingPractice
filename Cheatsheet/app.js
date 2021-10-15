@@ -45,6 +45,10 @@ const app = () => {
     page = './pages/loops.txt'
     displayPage(page)
   }
+   else if(command === 'master27') {
+    page = './pages/Master_27_subjects_covered.txt'
+    displayPage(page)
+  }
    else if(command === 'middleware') {
     page = './pages/middleware.txt'
     displayPage(page)
@@ -91,7 +95,7 @@ const app = () => {
   }
   else {
     console.clear();
-    console.log(`${command} is not listed...\n\nchoices are: \napi\narrays\nclasses\nflexbox\nfunctions\nheroku\njest\njson-web-tokens\nloops\nmiddleware\nmongoose\nmongo\nmysql\nnetlify\nnode\nobject\nreact\nreact-router-dom\nrest-api\ntopics\n`)
+    console.log(`${command} is not listed...\n\nchoices are: \napi\narrays\nclasses\nflexbox\nfunctions\nheroku\njest\njson-web-tokens\nloops\nmaster27\nmiddleware\nmongoose\nmongo\nmysql\nnetlify\nnode\nobject\nreact\nreact-router-dom\nrest-api\ntopics\n`)
   }
 
 }

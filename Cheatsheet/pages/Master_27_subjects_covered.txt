@@ -1,0 +1,39 @@
+# phil welsby - 15 oct 2021 - subjects covered in lectures during the Master27 bootcamp
+# 12 week course duration 26 july to 15 oct 2021
+# see also topics.txt in the pages folder
+
+Variables
+If statements
+Logical and comparison operators
+Arrays and Loops
+Functions
+Objects
+Html
+Html Attributes
+Css
+Flexbox
+Git
+CSS Animation
+JS_DOM
+Classes
+JS Engine
+Scope
+NPM
+JEST Testing
+Test Driven Development
+React
+State/UseState Hook
+spread operator / input events
+To Do List
+Conditional Rendering
+Fetching Data
+Class to Functional Component
+Node
+MySQL
+Express
+Web Server with Mongoose
+Middleware
+Reast Api
+JWT
+Bcrypt
+
