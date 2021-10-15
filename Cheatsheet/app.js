@@ -61,6 +61,10 @@ const app = () => {
      page = './pages/mysql.txt'
      displayPage(page)
   }
+  else if(command === 'netlify') {
+    page = './pages/netlify.txt'
+    displayPage(page)
+  }
   else if(command === 'node') {
     page = './pages/node.txt'
     displayPage(page)
@@ -87,7 +91,7 @@ const app = () => {
   }
   else {
     console.clear();
-    console.log(`${command} is not listed...\n\nchoices are: \napi\narrays\nclasses\nflexbox\nfunctions\nheroku\njest\njson-web-tokens\nloops\nmiddleware\nmongoose\nmongo\nmysql\nnode\nobject\nreact\nreact-router-dom\nrest-api\ntopics\n`)
+    console.log(`${command} is not listed...\n\nchoices are: \napi\narrays\nclasses\nflexbox\nfunctions\nheroku\njest\njson-web-tokens\nloops\nmiddleware\nmongoose\nmongo\nmysql\nnetlify\nnode\nobject\nreact\nreact-router-dom\nrest-api\ntopics\n`)
   }
 
 }
