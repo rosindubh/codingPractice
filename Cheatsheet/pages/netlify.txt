@@ -1,1 +1,35 @@
-the netlify page
+PHIL WELSBY - 15 OCT 2021
+
+**********************
+* HOSTING ON NETLIFY *
+**********************
+
+Sign in
+Link Netlify to github
+Choose New Site From GitHub
+Choose GitHub
+This will take you to GitHub and ask if authorised
+It will the show ever Repo on GitHub that you have
+Choose the Repo that you wish to Host
+Choose branch to deploy
+Basic build settings should show:
+Base directory 
+Build command === npm run build
+Publish directory === build 
+
+Next fill in any Advanced build settings, for example Cloudinary Api, name and secret
+Click on site deploy, then on the page that opens click Site Deploy In Progress at top left
+Lower down it will say building. If you click on that it will give a terminal and show the build progress
+During the build it will treat warnings as errors because process.env.CI = true
+Go back to Deploy Settings, on the left choose Environment
+Under Environment variables click Edit variables
+This will open key value input box's
+set key to be CI
+set value to be false
+Click save
+Then go back to Deploys (menu bar at the top)
+Then Trigger another deploy by clicking deploy site on the right
+Scroll to the top and click on Preview deploy it will take you to what you have rendered
+The URL is now in the address bar of the web browser
+The Repo is now Hosted on the Internet and the URL can be shared
+
