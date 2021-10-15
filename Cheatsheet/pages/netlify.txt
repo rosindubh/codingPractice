@@ -27,6 +27,7 @@ This will open key value input box's
 set key to be CI
 set value to be false
 Click save
+REMEMBER THE .env FILE IS NOT ON GitHub SO THESE WILL NEED TO BE ADDED IN THE EDIT VARIABLES TOO
 Then go back to Deploys (menu bar at the top)
 Then Trigger another deploy by clicking deploy site on the right
 Scroll to the top and click on Preview deploy it will take you to what you have rendered
