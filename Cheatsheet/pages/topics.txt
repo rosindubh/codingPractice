@@ -30,10 +30,10 @@ MySQL
 CRUD operations
 insomnia
 middleware
-ecpress
-bcryptjs
+express
+bcrypt
 cors
-dorenv
+dotenv
 myphpadmin
 API
 Rest API
@@ -41,7 +41,6 @@ lodash
 Thunder Client
 bcryptjs
 react router dom
-mumblewrap
 CI/CD
 AWS Lamdba
 Netify
